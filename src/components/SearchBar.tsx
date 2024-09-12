@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 
 interface SearchBarProps {
   onSearch: (word: string) => void;
+  onInputChange: () => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onInputChange }) => {
   const [inputValue, setInputValue] = useState('');
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    onInputChange(); 
+  };
+
+
   const handleSearch = () => {
-    if (inputValue.trim()) {
       onSearch(inputValue);
-    } else {
-      alert('Sökfältet kan inte vara tomt!');
-    }
   };
 
   return (
@@ -20,7 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       <input
         type="text"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handleInputChange}
         placeholder="Search for a word"
       />
       <button onClick={handleSearch}>Search</button>

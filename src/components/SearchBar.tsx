@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
+// Definierar props som SearchBar-komponenten kommer att ta emot
 interface SearchBarProps {
-  onSearch: (word: string) => void;
-  onInputChange: () => void;
+  onSearch: (word: string) => void
+  onInputChange: () => void
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onInputChange }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    onInputChange(); 
-  };
-
+    setInputValue(e.target.value)
+    onInputChange()
+  }
 
   const handleSearch = () => {
-      onSearch(inputValue);
-  };
+    onSearch(inputValue)
+  }
 
   return (
     <div>
@@ -28,7 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onInputChange }) => {
       />
       <button onClick={handleSearch}>Search</button>
     </div>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar

@@ -56,7 +56,11 @@
             "synonyms": [],
             "antonyms": []
           },
-          { "definition": "Testa; seed coat.", "synonyms": [], "antonyms": [] },
+          {
+            "definition": "Testa; seed coat.",
+            "synonyms": [],
+            "antonyms": []
+          },
           {
             "definition": "Judgment; distinction; discrimination.",
             "synonyms": [],
@@ -146,7 +150,11 @@
       {
         "partOfSpeech": "noun",
         "definitions": [
-          { "definition": "A witness.", "synonyms": [], "antonyms": [] }
+          {
+            "definition": "A witness.",
+            "synonyms": [],
+            "antonyms": []
+          }
         ],
         "synonyms": [],
         "antonyms": []

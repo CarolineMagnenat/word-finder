@@ -1,44 +1,44 @@
 export const isWordData = (data: unknown): data is WordData => {
-  const wordData = data as WordData;
+  const wordData = data as WordData
   return (
     typeof wordData === 'object' &&
     wordData !== null &&
     typeof wordData.word === 'string' &&
     Array.isArray(wordData.phonetics) &&
     Array.isArray(wordData.meanings)
-  );
-};
+  )
+}
 
 export interface License {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 
 export interface Phonetic {
-  text?: string;
-  audio: string;
-  sourceUrl?: string;
-  license?: License;
+  text?: string
+  audio: string
+  sourceUrl?: string
+  license?: License
 }
 
 export interface Definition {
-  definition: string;
-  synonyms: string[];
-  antonyms: string[];
-  example?: string;
+  definition: string
+  synonyms: string[]
+  antonyms: string[]
+  example?: string
 }
 
 export interface Meaning {
-  partOfSpeech: string;
-  definitions: Definition[];
-  synonyms: string[];
-  antonyms: string[];
+  partOfSpeech: string
+  definitions: Definition[]
+  synonyms: string[]
+  antonyms: string[]
 }
 
 export interface WordData {
-  word: string;
-  phonetics: Phonetic[];
-  meanings: Meaning[];
-  license: License;
-  sourceUrls: string[];
+  word: string
+  phonetics: Phonetic[]
+  meanings: Meaning[]
+  license: License
+  sourceUrls: string[]
 }

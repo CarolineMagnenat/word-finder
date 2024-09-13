@@ -1,11 +1,12 @@
-import React from "react";
-import { WordData } from "../types"; 
+import React from 'react'
+import { WordData } from '../types'
 
+// Definierar props som WordDefinition-komponenten kommer att ta emot
 interface WordDefinitionProps {
-  wordData: WordData;
-  onAddFavorite: (word: WordData) => void;
-  onRemoveFavorite: (word: WordData) => void;
-  isFavorite: boolean;
+  wordData: WordData
+  onAddFavorite: (word: WordData) => void
+  onRemoveFavorite: (word: WordData) => void
+  isFavorite: boolean
 }
 
 const WordDefinition: React.FC<WordDefinitionProps> = ({
@@ -14,12 +15,10 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
   onRemoveFavorite,
   isFavorite,
 }) => {
-  // Kontrollera om `wordData` existerar och har nödvändig information
+  // Hanterar fall där ingen data är tillgänglig
   if (!wordData || !wordData.word) {
-    return <div>Ingen data tillgänglig för detta ord.</div>;
+    return <div>No data available for this word.</div>
   }
-
-  
 
   return (
     <div>
@@ -33,14 +32,14 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
             <button
               onClick={() => new Audio(wordData.phonetics[0].audio).play()}
             >
-              🔊 Spela upp ljud
+              🔊 Play sound
             </button>
           )}
         </div>
       )}
       {wordData.meanings.length > 0 && (
         <div>
-          <h3>Betydelser:</h3>
+          <h3>Meanings:</h3>
           {wordData.meanings.slice(0, 2).map((meaning, index) => (
             <div key={index} className="meaning">
               <h4>{meaning.partOfSpeech}</h4>
@@ -49,7 +48,7 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
                   <p>{definition.definition}</p>
                   {definition.example && (
                     <p>
-                      <em>Exempel: {definition.example}</em>
+                      <em>Example: {definition.example}</em>
                     </p>
                   )}
                 </div>
@@ -63,10 +62,10 @@ const WordDefinition: React.FC<WordDefinitionProps> = ({
           isFavorite ? onRemoveFavorite(wordData) : onAddFavorite(wordData)
         }
       >
-        {isFavorite ? "Ta bort från favoriter" : "Lägg till i favoriter"}
+        {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default WordDefinition;
+export default WordDefinition

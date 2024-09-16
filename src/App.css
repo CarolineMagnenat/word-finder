@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0; /* Neutral ljusgrå bakgrund */
-  color: #333; /* Mörkgrå textfärg */
+  background-color: #f0f0f0;
+  color: #333; 
   display: flex;
-  justify-content: center; /* Centrera innehållet horisontellt */
-  align-items: center; /* Centrera innehållet vertikalt */
-  min-height: 100vh; /* Se till att sidan täcker hela höjden */
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -14,26 +14,25 @@ body {
 
 /* Mörkt tema */
 body.dark {
-  background-color: #2c2c2c; /* Mörk bakgrund för mörkt tema */
-  color: #f5f5f5; /* Ljus textfärg */
+  background-color: #2c2c2c; 
+  color: #f5f5f5; 
 }
 
 .container {
-  background-color: #fff; /* Vit bakgrund för innehållsbehållaren */
+  background-color: #fff; 
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga för djup */
-  max-width: 500px; /* Maxbredd för att hålla det kompakt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 500px; 
   width: 100%;
-  text-align: center; /* Centrera texten */
+  text-align: center; 
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-/* Mörkt tema för innehållsbehållaren */
 body.dark .container {
-  background-color: #3c3c3c; /* Lite ljusare än sidans bakgrund */
+  background-color: #3c3c3c; 
 }
 
 h2 {
@@ -55,11 +54,11 @@ ul {
 }
 
 button {
-  background-color: #555; /* Neutral grå knappfärg */
-  color: #fff; /* Vit textfärg */
+  background-color: #555; 
+  color: #fff;
   border: none;
   margin: 4px;
-  padding: 5px 8px; /* Mindre padding för en diskretare knapp */
+  padding: 5px 8px; 
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -69,20 +68,20 @@ button {
 }
 
 button:hover {
-  background-color: #777; /* Ljusare grå när man hovrar */
+  background-color: #777; 
 }
 
 body.dark button {
-  background-color: #777; /* Ljusare grå för mörkt tema */
+  background-color: #777; 
 }
 
 body.dark button:hover {
-  background-color: #999; /* Ännu ljusare nyans när man hovrar */
+  background-color: #999; 
 }
 
 .search-bar {
   display: flex;
-  justify-content: center; /* Centrera innehållet */
+  justify-content: center; 
   margin-bottom: 1rem;
 }
 

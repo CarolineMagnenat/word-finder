@@ -94,8 +94,31 @@ describe('SearchBar Component', () => {
     await waitFor(() => {
       expect(screen.getByText('You must enter a word.')).toBeInTheDocument()
     })
+  })
 
-    // kolla ljud
+  it('plays the audio when the play button is clicked', async () => {
+    render(<App />)
+
+    const searchInput = screen.getByPlaceholderText('Search for a word')
+    const searchButton = screen.getByText('Search')
+
+    await userEvent.type(searchInput, 'test')
+    await userEvent.click(searchButton)
+
+    await waitFor(() => {
+      expect(screen.getByText('test')).toBeInTheDocument()
+    })
+
+    const playSoundButton = screen.getByText(/🔊 Play sound/i)
+    expect(playSoundButton).toBeInTheDocument()
+
+    const audioPlayMock = vi
+      .spyOn(window.HTMLMediaElement.prototype, 'play')
+      .mockImplementation(() => Promise.resolve())
+    await userEvent.click(playSoundButton)
+    expect(audioPlayMock).toHaveBeenCalledTimes(1)
+
+    audioPlayMock.mockRestore()
   })
 })
 
